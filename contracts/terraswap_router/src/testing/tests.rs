@@ -21,6 +21,8 @@ fn proper_initialization() {
 
     let msg = InstantiateMsg {
         terraswap_factory: "terraswapfactory".to_string(),
+        loop_factory: "loopfactory".to_string(),
+        astroport_factory: "astroportfactory".to_string(),
     };
 
     let info = mock_info("addr0000", &[]);
@@ -32,6 +34,8 @@ fn proper_initialization() {
     let config: ConfigResponse =
         from_binary(&query(deps.as_ref(), mock_env(), QueryMsg::Config {}).unwrap()).unwrap();
     assert_eq!("terraswapfactory", config.terraswap_factory.as_str());
+    assert_eq!("loopfactory", config.loop_factory.as_str());
+    assert_eq!("astroportfactory", config.astroport_factory.as_str());
 }
 
 #[test]
@@ -44,6 +48,8 @@ fn execute_swap_operations() {
 
     let msg = InstantiateMsg {
         terraswap_factory: "terraswapfactory".to_string(),
+        loop_factory: "loopfactory".to_string(),
+        astroport_factory: "astroportfactory".to_string(),
     };
 
     let info = mock_info("addr0000", &[]);
@@ -294,6 +300,8 @@ fn execute_swap_operation() {
     let mut deps = mock_dependencies(&[]);
     let msg = InstantiateMsg {
         terraswap_factory: "terraswapfactory".to_string(),
+        loop_factory: "loopfactory".to_string(),
+        astroport_factory: "astroportfactory".to_string(),
     };
 
     let info = mock_info("addr0000", &[]);
@@ -417,6 +425,8 @@ fn query_buy_with_routes() {
 
     let msg = InstantiateMsg {
         terraswap_factory: "terraswapfactory".to_string(),
+        loop_factory: "loopfactory".to_string(),
+        astroport_factory: "astroportfactory".to_string(),
     };
 
     let info = mock_info("addr0000", &[]);

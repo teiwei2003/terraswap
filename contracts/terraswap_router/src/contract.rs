@@ -17,7 +17,7 @@ use terraswap::asset::{Asset, AssetInfo, PairInfo};
 use terraswap::pair::{QueryMsg as PairQueryMsg, SimulationResponse};
 use terraswap::querier::query_pair_info;
 use terraswap::router::{
-    ConfigResponse, Cw20HookMsg, ExecuteMsg, InstantiateMsg, QueryMsg,
+    ConfigResponse, Cw20HookMsg, ExecuteMsg, InstantiateMsg, MigrateMsg, QueryMsg,
     SimulateSwapOperationsResponse, SwapOperation,
 };
 
@@ -501,4 +501,13 @@ fn test_invalid_operations() {
         },
     ])
     .is_err());
+}
+
+#[cfg_attr(not(feature = "library"), entry_point)]
+pub fn migrate(
+    _deps: DepsMut,
+    _env: Env,
+    _msg: MigrateMsg,
+) -> StdResult<Response<TerraMsgWrapper>> {
+    Ok(Response::default())
 }

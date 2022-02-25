@@ -107,3 +107,6 @@ pub struct ConfigResponse {
 pub struct SimulateSwapOperationsResponse {
     pub amount: Uint128,
 }
+
+#[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
+pub struct MigrateMsg {}

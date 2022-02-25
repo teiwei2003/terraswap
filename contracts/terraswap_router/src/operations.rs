@@ -13,6 +13,8 @@ use terraswap::pair::ExecuteMsg as PairExecuteMsg;
 use terraswap::querier::{query_balance, query_pair_info, query_token_balance};
 use terraswap::router::SwapOperation;
 
+use std::str::FromStr;
+
 /// Execute swap operation
 /// swap all offer asset to ask asset
 pub fn execute_swap_operation(
@@ -157,7 +159,7 @@ pub fn execute_swap_operation(
                 deps.as_ref(),
                 Addr::unchecked(pair_info.contract_addr),
                 offer_asset,
-                None,
+                Some(Decimal::from_str("0.5")?),
                 to,
             )?]
         }

@@ -1,3 +1,7 @@
+# 2.5.0
+
+* [2bfb0bb](https://github.com/terraswap/terraswap/pull/20/commits/8da74c9850567fa1e75d33d86f76d79d2326e038) LOOP and ASTROPORT support on router
+
 # 2.4.1
 
 * [191c1fb](https://github.com/terraswap/terraswap/pull/20/commits/191c1fb11e84771a022d793b70b9fe70988e50d3) Append `sender` and `receiver` event attributes to response.
